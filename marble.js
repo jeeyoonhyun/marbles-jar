@@ -22,7 +22,7 @@ const marblesLeft = () => {
 
 let text = `
     Current marble: #${currentMarble()} [${new Date(Date.now())}]
-    Marble Jar: ${marblesLeft()}% left
+    Jar of marbles: ${marblesLeft()}% left
 `
 
 console.log(text);
