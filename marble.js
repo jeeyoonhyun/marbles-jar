@@ -28,7 +28,7 @@ let text = `
 console.log(text);
 
 // write file as marbles.txt
-fs.writeFile('./marbles.txt', text, 'utf8', function (err) {
+fs.writeFile('./marble.txt', text, 'utf8', function (err) {
     if (err) return console.log(err);
     console.log('marble sucessfully saved!');
 });
