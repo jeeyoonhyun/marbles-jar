@@ -11,15 +11,19 @@ let y = 1993
 let m = 4
 let d = 26
 
+// calculate current marble
 const currentMarble = () => {
     return Math.floor((Date.now()-new Date(y, m, d))/1000/3600/24/7)
 }
+
+// calculate percentage of left marbles
 const marblesLeft = () => {
     let marbleLeft = (3900-currentMarble())/3900 * 100
     let rounded = Number.parseFloat(marbleLeft).toFixed(2)
     return rounded;
 }
 
+// format text
 let text = `
     Current marble: #${currentMarble()} [${new Date(Date.now())}]
     Jar of marbles: ${marblesLeft()}% left
@@ -27,7 +31,7 @@ let text = `
 
 console.log(text);
 
-// write file as marbles.txt
+// write file as marble.txt
 fs.writeFile('./marble.txt', text, 'utf8', function (err) {
     if (err) return console.log(err);
     console.log('marble sucessfully saved!');
